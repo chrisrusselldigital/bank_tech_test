@@ -44,12 +44,15 @@ Added rspec, rubocop (and scaffolint) together with `lib` and `spec` folders
 
 # TDD process
 
+### Add a deposit and return the balance
 The first (red) test measured the change that a deposit (1000.00) would have on the balance:
 
-Red
+Red:
 - Test that `.deposit` changes `.balance` by the amount added
 
-Green
+Path to green:
 - Create an empty `Account` class
 - Create an empty `.balance` method
-- Add argument to
+- Create an empty `.deposit` method
+- Add argument to `.deposit` method
+- Initialised a method to set `.balance` to zero upon account creation
