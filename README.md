@@ -9,7 +9,7 @@
 
 ## First rough design
 
-Based on the requirements given in the [original Github repo] (.../makersacademy/course/blob/master/individual_challenges/bank_tech_test.md) a rough design, to highlight my earliest thinking.
+Based on the requirements given in the [original Github repo] (https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md) a rough design, to highlight my earliest thinking.
 
 ![First design bank tech test](/assets/first-design-bank-test.jpg "first design tech test")
 
@@ -28,3 +28,7 @@ Has methods:
 - balance (no arguments necessary - outputs bank statement, per the original design)
 - withdrawal (takes 2 arguments; amount and date)
 - deposit (takes 2 arguments: amount and date)
+
+# TDD
+
+Added rspec, together with `lib` and `spec` folders
