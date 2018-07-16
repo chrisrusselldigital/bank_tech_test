@@ -1,18 +1,17 @@
 class Account
 
-def initialize
-  @amount = 0
-end
+  def initialize
+    @amount = 0
+  end
 
-
-  def deposit(amount)
+  def deposit(date, amount)
+    @date = date
     @amount = amount
+    [@date, @amount]
   end
 
   def balance
-    @amount
+    [@date, @amount]
   end
-
-
 
 end
