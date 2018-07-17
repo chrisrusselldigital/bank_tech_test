@@ -7,7 +7,7 @@
 - Account statement (date, amount, balance) printing.
 - Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
-Output should be:
+Statement output should be:
 
 ```
 date || credit || debit || balance
@@ -44,7 +44,7 @@ Added rspec, rubocop (and scaffolint) together with `lib` and `spec` folders
 
 # TDD process
 
-### Add a deposit and return the balance
+### Add a deposit (credit) and return the balance
 
 The first (red) test measured the change that a deposit (1000.00) would have on the balance:
 
@@ -67,3 +67,32 @@ Red:
 Path to green:
 - Add a second argument to `.deposit`
 - Return both values in an array, within `.balance`
+
+Refactor
+- Changed the original test to add date and amount
+
+## Enable withdrawal (debit) from account balance
+
+Red:
+- Test that `.withdraw` takes both a date and amount arguments, reflected in balance
+
+Path to green:
+- Create the `.withdraw` method
+- Amend the `.balance` method so that it adds each transaction (withdrawal or deposit) to a statement
+- `.statement` is a new method I'll need - this is an update to the original diagram
+
+## Initial statement design thoughts
+
+![Bank statement thoughts](/assets/bank-statement-thoughts.jpg "bank statement")
+
+## Updated statement design thoughts
+
+After some thinking about both how the data could be stored and retrieved, I decided upon the following structure, using an array of hashes:
+
+```
+[{:Date=>"15/01/2012", :Deposit=>10, :Debit=>0, :Balance=>10}]
+```
+
+This allows for an easier iteration. It did however, require some larger refactoring from the first use cases, however the 2 methods of `credit` and `debit` still remain.
+
+I also created instance variables for both deposits and withdrawals, both initialised on instantiation. These hold the ongoing debits and credits.
