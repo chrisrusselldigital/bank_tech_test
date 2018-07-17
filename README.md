@@ -64,7 +64,6 @@ Path to green:
 - Add argument to `.deposit` method
 - Initialised a method to set `.balance` to zero upon account creation
 
-
 ### Add date, within an argument in deposit
 
 Red:
@@ -99,10 +98,12 @@ After some thinking (and much time spent trying different solutions in irb, henc
 [{:Date=>"15/01/2012", :Deposit=>10, :Debit=>0, :Balance=>10}]
 ```
 
-This allows for an easier iteration. It did however, require some larger refactoring from the first use cases, however the 2 methods of `credit` and `debit` still remain.
+This allows for an easier iteration. It did however, require some larger refactoring from the first use cases, however the 2 methods of `.credit` and `.debit` still remain.
 
-I also created instance variables for both deposits and withdrawals, both initialised on instantiation. These hold the ongoing debits and credits.
+I also created instance variables for both deposits and withdrawals, both initialised on instantiation. These hold the ongoing debits and credits, which allow the value of balance to be calculated.
 
-## MVP optimisation - things to work on next
+## Things to refactor
 - Separation of single `Account` class into smaller classes
-- Isolated tests
+- Isolate tests
+- Separate feature & unit tests
+- Move relevant methods into private
