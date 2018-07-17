@@ -36,10 +36,10 @@ A first sketch, to outline thoughts around objects (classes, methods, arguments)
 
 ### Initial thoughts:
 
-Class:
+#### Class:
 - account
 
-Has methods:
+#### Has methods:
 - balance (no arguments necessary - outputs bank statement, per the original design)
 - withdrawal (takes 2 arguments; amount and date)
 - deposit (takes 2 arguments: amount and date)
@@ -105,4 +105,4 @@ I also created instance variables for both deposits and withdrawals, both initia
 
 ## MVP optimisation - things to work on next
 - Separation of single `Account` class into smaller classes
-- Tests which then
+- Isolated tests
