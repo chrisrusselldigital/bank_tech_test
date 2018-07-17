@@ -16,6 +16,12 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
+## User stories
+1. I want to deposit to my account, including the amount and date
+2. I want to withdraw from my account, including the amount and date
+3. I want to see an ongoing balance, which is the total value of deposits, minus the total value of withdrawals
+4. I want to see my account statement, which is a list of transactions including date, deposit/withdrawal and balance
+
 ## First rough design
 
 Based on the requirements given in the [original Github repo](https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md) a rough design, to highlight my earliest thinking.
@@ -40,7 +46,7 @@ Has methods:
 
 # Configuration
 
-Added rspec, rubocop (and scaffolint) together with `lib` and `spec` folders
+Added rspec, rubocop (together with scaffolint) together with `lib` and `spec` folders
 
 # TDD process
 
@@ -87,7 +93,7 @@ Path to green:
 
 ## Updated statement design thoughts
 
-After some thinking about both how the data could be stored and retrieved, I decided upon the following structure, using an array of hashes:
+After some thinking (and much time spent trying different solutions in irb, hence lack of commits) about both how the data could be stored and retrieved, I decided upon the following structure, using an array of hashes:
 
 ```
 [{:Date=>"15/01/2012", :Deposit=>10, :Debit=>0, :Balance=>10}]
@@ -96,3 +102,7 @@ After some thinking about both how the data could be stored and retrieved, I dec
 This allows for an easier iteration. It did however, require some larger refactoring from the first use cases, however the 2 methods of `credit` and `debit` still remain.
 
 I also created instance variables for both deposits and withdrawals, both initialised on instantiation. These hold the ongoing debits and credits.
+
+## MVP optimisation - things to work on next
+- Separation of single `Account` class into smaller classes
+- Tests which then
