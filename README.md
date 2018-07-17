@@ -107,3 +107,4 @@ I also created instance variables for both deposits and withdrawals, both initia
 - Isolate tests
 - Separate feature & unit tests
 - Move relevant methods into private
+- Include test coverage
