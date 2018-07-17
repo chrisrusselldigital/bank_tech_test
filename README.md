@@ -108,3 +108,6 @@ I also created instance variables for both deposits and withdrawals, both initia
 - Separate feature & unit tests
 - Move relevant methods into private
 - Include test coverage
+
+## Refactoring
+- Added SimpleCov at 90% minimum coverage
