@@ -115,5 +115,6 @@ I also created instance variables for both deposits and withdrawals, both initia
 - Extract the existing `Account` class to manage all the account actions
 - Create test doubles for the `statement.transactions`
 
-## Refactoring 2
+## Refactoring 2 (done)
 - ~Extract a new `Transactions` class to manage `.debit` and `.credit` with accompanying tests~
+- I started creating a `Transactions` class, which led me down the path of thinking I needed a class for every behaviour. This felt excessive.
