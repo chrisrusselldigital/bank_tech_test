@@ -1,19 +1,21 @@
+require_relative 'statement'
+
 class Account
 
   def initialize
-    @statement = []
+    @account_statement = Statement.new
     @deposits = 0
     @withdrawals = 0
   end
 
   def credit(date, deposit)
-    @deposits = deposit + @deposits
+    @deposits = (deposit + @deposits)
     @transaction = {
       Date: date,
       Deposit: deposit,
       Balance: (@deposits - @withdrawals)
     }
-    @statement << @transaction
+    @account_statement.transactions << @transaction
   end
 
   def debit(date, withdrawal)
@@ -23,19 +25,11 @@ class Account
       Debit: withdrawal,
       Balance: (@deposits - @withdrawals)
     }
-    @statement << @transaction
-  end
-
-  def transaction
-    @transaction
+    @account_statement.transactions << @transaction
   end
 
   def statement
-    puts ["date || credit || debit || balance"]
-    @statement.reverse_each do |transaction|
-      puts "#{transaction[:Date]} || #{transaction[:Deposit]} || #{transaction[:Debit]} || #{transaction[:Balance]} "
-    end
-
+    @account_statement.print
   end
 
 end

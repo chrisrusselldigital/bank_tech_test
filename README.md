@@ -103,11 +103,14 @@ This allows for an easier iteration. It did however, require some larger refacto
 I also created instance variables for both deposits and withdrawals, both initialised on instantiation. These hold the ongoing debits and credits, which allow the value of balance to be calculated.
 
 ## Things to refactor
-- Separation of single `Account` class into smaller classes
+- Separation of single `Account` (which is now doing _everything_) class into smaller classes
 - Isolate tests
 - Separate feature & unit tests
 - Move relevant methods into private
 - Include test coverage
 
-## Refactoring
-- Added SimpleCov at 90% minimum coverage
+## Refactoring done
+- Added SimpleCov at 90% minimum coverage (purposefully left assets to demo coverage)
+- Extract a `Statement` class
+- Extract the existing `Account` class to manage all the account actions
+- Create a new `Transactions` class to manage `.debit` and `.credit`

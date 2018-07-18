@@ -2,45 +2,30 @@ require 'account'
 
 describe Account do
 
-  it "completes an account credit" do
+  it "deposits money into an account" do
     # setup
     account = Account.new
-    # exercise
-    account.credit("10/01/2012", 500)
-    # verify
-    expect(account.transaction[:Date]).to eq("10/01/2012")
-    expect(account.transaction[:Deposit]).to eq(500)
-    expect(account.transaction[:Balance]).to eq(500)
+    # exercise & verify
+    expect(account.credit("10/01/2012", 500)).to eq([{:Date=>"10/01/2012", :Deposit=>500, :Balance=>500}])
   end
 
-  it "completes an account withdrawal" do
+  it "withdraws money from an account" do
     # setup
     account = Account.new
-    # exercise
-    account.debit("10/01/2012", 500)
-    # verify
-    expect(account.transaction[:Date]).to eq("10/01/2012")
-    expect(account.transaction[:Debit]).to eq(500)
-    expect(account.transaction[:Balance]).to eq(-500)
+    # exercise & verify
+    expect(account.debit("10/01/2012", 500)).to eq([{:Date=>"10/01/2012", :Debit=>500, :Balance=>-500}])
   end
 
-  it "changes the account balance" do
+  it "prints account transactions" do
     # setup
-    account = Account.new
+    statement = Statement.new
     # exercise
-    account.credit("10/01/2012", 500)
-    account.debit("10/01/2012", 500)
+    transaction_dbl = double(:date =>"10/01/2012", :deposit => 500, :balance => 500)
     # verify
-    expect(account.transaction[:Balance]).to be(0)
-  end
+    expect(transaction_dbl.date).to eq("10/01/2012")
+    expect(transaction_dbl.deposit).to eq(500)
+    expect(transaction_dbl.balance).to eq(500)
 
-  it "prints an account statement" do
-    # setup
-    account = Account.new
-    # exercise
-    account.credit("10/01/2012", 500)
-    # verify
-    expect(account.statement).to eq([{ :Date => "10/01/2012", :Deposit => 500, :Balance => 500 }])
   end
 
 end
