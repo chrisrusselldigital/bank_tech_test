@@ -115,5 +115,5 @@ I also created instance variables for both deposits and withdrawals, both initia
 - Extract the existing `Account` class to manage all the account actions
 - Create test doubles for the `statement.transactions`
 
-## Refactoring 2 (In progress)
-- Extract a new `Transactions` class to manage `.debit` and `.credit` with accompanying tests
+## Refactoring 2
+- ~Extract a new `Transactions` class to manage `.debit` and `.credit` with accompanying tests~
