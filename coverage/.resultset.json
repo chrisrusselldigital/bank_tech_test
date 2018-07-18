@@ -25,11 +25,11 @@
         1,
         null,
         1,
-        null,
-        1,
-        1,
         1,
         null,
+        1,
+        1,
+        1,
         null,
         null,
         null
@@ -88,15 +88,12 @@
         null,
         null,
         1,
-        2,
+        3,
         0,
         null,
         null,
         null,
         null
-      ],
-      "/Users/chrisrussell/makers/bank_tech_test/spec/features/features_spec.rb": [
-
       ],
       "/Users/chrisrussell/makers/bank_tech_test/spec/statement_spec.rb": [
         1,
@@ -110,11 +107,9 @@
         1,
         null,
         null,
-        null,
-        null,
         null
       ]
     },
-    "timestamp": 1531916153
+    "timestamp": 1531916544
   }
 }

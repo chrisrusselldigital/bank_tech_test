@@ -9,6 +9,4 @@ describe Statement do
     expect(statement.header).to eq(["date || credit || debit || balance"])
   end
 
-
-
 end
