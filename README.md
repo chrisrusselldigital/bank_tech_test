@@ -106,11 +106,14 @@ I also created instance variables for both deposits and withdrawals, both initia
 - Separation of single `Account` (which is now doing _everything_) class into smaller classes
 - Isolate tests
 - Separate feature & unit tests
-- Move relevant methods into private
+- Move relevant methods into private (if necessary/possible)
 - Include test coverage
 
-## Refactoring done
+## Refactoring 1 (done)
 - Added SimpleCov at 90% minimum coverage (purposefully left assets to demo coverage)
-- Extract a `Statement` class
+- Extract a `Statement` class, with accompanying tests
 - Extract the existing `Account` class to manage all the account actions
-- Create a new `Transactions` class to manage `.debit` and `.credit`
+- Create test doubles for the `statement.transactions`
+
+## Refactoring 2 (In progress)
+- Extract a new `Transactions` class to manage `.debit` and `.credit` with accompanying tests
