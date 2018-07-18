@@ -118,3 +118,6 @@ I also created instance variables for both deposits and withdrawals, both initia
 ## Refactoring 2 (done)
 - ~Extract a new `Transactions` class to manage `.debit` and `.credit` with accompanying tests~
 - I started creating a `Transactions` class, which led me down the path of thinking I needed a class for every behaviour. This felt excessive.
+
+## Refactoring 3
+- Added errors for credit and debit amounts less than zero
