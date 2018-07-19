@@ -1,6 +1,14 @@
 # Bank tech test
 
-## Requirements
+## How to install
+
+`bundle install`
+
+# Testing & code style
+
+Uses rspec (with `rspec`), rubocop together with scaffolint (with `rubocop`) together with `lib` and `spec` folders
+
+## System requirements
 
 - Interact with the code via IRB (Don't need to implement a command line interface that takes input from STDIN.)
 - Deposits, withdrawal.
@@ -43,10 +51,6 @@ A first sketch, to outline thoughts around objects (classes, methods, arguments)
 - balance (no arguments necessary - outputs bank statement, per the original design)
 - withdrawal (takes 2 arguments; amount and date)
 - deposit (takes 2 arguments: amount and date)
-
-# Configuration
-
-Added rspec, rubocop (together with scaffolint) together with `lib` and `spec` folders
 
 # TDD process
 
