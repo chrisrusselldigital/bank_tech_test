@@ -8,6 +8,10 @@
 
 Uses rspec (with `rspec`), rubocop together with scaffolint (with `rubocop`) together with `lib` and `spec` folders
 
+## Screenshot
+
+![Bank test screenshot](/assets/bank-test-screenshot.jpg "screenshot")
+
 ## System requirements
 
 - Interact with the code via IRB (Don't need to implement a command line interface that takes input from STDIN.)
