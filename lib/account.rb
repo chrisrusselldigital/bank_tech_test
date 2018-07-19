@@ -8,35 +8,41 @@ class Account
   end
 
   def credit(date, deposit)
-    if deposit < 1
+    if deposit < 0.1
       raise "Deposit needs to be larger than 0."
     end
+
     @balance += deposit
     @transaction = {
       Date: date,
-      Deposit: sprintf('%.2f', deposit),
-      Balance: sprintf('%.2f', @balance)
+      Deposit: deposit,
+      Balance: @balance
     }
     @account_statement.transactions << @transaction
+
   end
 
   def debit(date, withdrawal)
-
-    if withdrawal < 1
+    
+    if withdrawal < 0.1
       raise "Withdrawal needs to be larger than 0."
+    end
+
+    if @balance < withdrawal
+      raise "Your balance is too small to withdraw that amount"
     end
 
     @balance -= withdrawal
     @transaction = {
       Date: date,
-      Debit: sprintf('%.2f', withdrawal),
-      Balance: sprintf('%.2f', @balance)
+      Debit: withdrawal,
+      Balance: @balance
     }
     @account_statement.transactions << @transaction
   end
 
   def statement
-    @account_statement.print
+    puts @account_statement.print
   end
 
 end

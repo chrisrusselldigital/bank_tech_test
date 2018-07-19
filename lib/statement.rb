@@ -15,7 +15,7 @@ class Statement
 
   def transactions
     @statement.reverse_each do |transaction|
-      puts "#{transaction[:Date]} || #{transaction[:Deposit]} || #{transaction[:Debit]} || #{transaction[:Balance]} "
+      puts "#{transaction[:Date]} || #{transaction[:Deposit]} || #{transaction[:Debit]} || #{transaction[:Balance]}"
     end
   end
 
