@@ -10,7 +10,7 @@ Uses rspec (with `rspec`), rubocop together with scaffolint (with `rubocop`) tog
 
 ## Screenshot
 
-![Bank test screenshot](/assets/bank-test-screenshot.jpg "screenshot")
+![Bank test screenshot](/assets/bank-test-screenshot.jpeg "screenshot")
 
 ## System requirements
 
