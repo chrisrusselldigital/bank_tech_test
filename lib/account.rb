@@ -4,26 +4,33 @@ class Account
 
   def initialize
     @account_statement = Statement.new
-    @deposits = 0
-    @withdrawals = 0
+    @balance = 0
   end
 
   def credit(date, deposit)
-    @deposits = (deposit + @deposits)
+    if deposit < 1
+      raise "Deposit needs to be larger than 0."
+    end
+    @balance += deposit
     @transaction = {
       Date: date,
-      Deposit: deposit,
-      Balance: (@deposits - @withdrawals)
+      Deposit: sprintf('%.2f', deposit),
+      Balance: sprintf('%.2f', @balance)
     }
     @account_statement.transactions << @transaction
   end
 
   def debit(date, withdrawal)
-    @withdrawals = withdrawal + @withdrawals
+
+    if withdrawal < 1
+      raise "Withdrawal needs to be larger than 0."
+    end
+
+    @balance -= withdrawal
     @transaction = {
       Date: date,
-      Debit: withdrawal,
-      Balance: (@deposits - @withdrawals)
+      Debit: sprintf('%.2f', withdrawal),
+      Balance: sprintf('%.2f', @balance)
     }
     @account_statement.transactions << @transaction
   end
